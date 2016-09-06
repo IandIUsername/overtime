@@ -1,3 +1,8 @@
+##refactor :todos
+refactor user association integration test post_spec
+
+
+
 
      ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
     '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
