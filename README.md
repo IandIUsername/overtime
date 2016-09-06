@@ -1,3 +1,20 @@
+# overtime app
+
+## key requirement: company needs documentation that salaried employees did nor did not get overtime that week
+
+## models
+-x Post -> date:date rationale:text
+-x User -> devise
+-x AdminUser => STI
+
+## features
+- approval workflow
+- sms sending -> link to approval or overtime input
+- administrate admin dashboard
+- email summary to managers for approval
+- needs to be documented if employee did not log overtime
+
+
 ##refactor :todos
 refactor user association integration test post_spec
 
