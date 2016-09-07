@@ -17,7 +17,7 @@
 
 ##refactor :todos
 refactor user association integration test post_spec
-
+-add full_name method to user
 
 
 
