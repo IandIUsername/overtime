@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'taps'
 gem 'pg'
 gem 'rails', '4.2.6'
 gem 'sqlite3'
