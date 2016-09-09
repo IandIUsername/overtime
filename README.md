@@ -17,6 +17,8 @@
 
 ##ui
 - bootstrap formatting - complete
+- icons font awesome
+- Update the style for forms
 
 ##refactor :todos
 -refactor user association integration test post_spec

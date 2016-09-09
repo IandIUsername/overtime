@@ -2,10 +2,10 @@
  
  
  <% if @post.errors.any? %>
- <% @post.errors.full_messages.each do |msg| %>
- <%= js add_gritter(msg, title: "Overtime App Error Notification", sticky: false) %>
+   <% @post.errors.full_messages.each do |msg| %>
+     <%= js add_gritter(msg, title: "Overtime App Error Notification", sticky: false) %>
  
- <% end %>
+   <% end %>
  <% end %>
 
 <div class="form-group">
