@@ -13,7 +13,7 @@
 - administrate admin dashboard
 - email summary to managers for approval
 - needs to be documented if employee did not log overtime
-
+- block non admin and guest user to admin
 
 ##ui
 - bootstrap formatting - complete
