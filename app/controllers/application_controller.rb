@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  
+  includ Pundit
  before_action :authenticate_user!
   # github radrails9 chicken5snakes
   # Prevent CSRF attacks by raising an exception.
