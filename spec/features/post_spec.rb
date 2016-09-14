@@ -1,9 +1,15 @@
 describe "navigate" do
+    
+    
+    let(:user) { FactoryGirl.create(:user) }
+    
+    let(:post) { Post.create(date: Date.today, rationale: "rationale", user_id: user.id) } 
+    
     before do
-        @user = FactoryGirl.create(:user)
+       # @user = FactoryGirl.create(:user)
            #user = User.create(email: "test@test.com", password: 'password', password_confirmation: 'password', first_name: "John", last_name: 
            #"Snow")
-           login_as(@user, :scope => :user)
+           login_as(user, :scope => :user)
        end
        
    describe "index" do
@@ -23,8 +29,8 @@ describe "navigate" do
       it "has a list of posts" do
          post1 = FactoryGirl.create(:post)
          post2 = FactoryGirl.create(:second_post)
-         post1.update(user_id: @user.id)
-         post2.update(user_id: @user.id)
+         post1.update(user_id: user.id)
+         post2.update(user_id: user.id)
           #post1 = Post.create(date: Date.today, rationale: "post1", user_id: @user.id)
           #post2 = Post.create(date: Date.today, rationale: "post2", user_id: @user.id)
           visit posts_path
@@ -34,8 +40,8 @@ describe "navigate" do
       it "has a scope such that only post creators can see their posts" do
           
           
-         post1 = Post.create(date: Date.today, rationale: "dogs", user_id: @user.id )
-         post1 = Post.create(date: Date.today, rationale: "dogs", user_id: @user.id )
+         #post1 = Post.create(date: Date.today, rationale: "dogs", user_id: @user.id )
+         #post1 = Post.create(date: Date.today, rationale: "dogs", user_id: @user.id )
          
          other_user = User.create(first_name: 'other', last_name: 'user', email: 'other_user@other_user.com', password: 'password', 'password_confirmation': 'password')
          
@@ -57,11 +63,20 @@ describe "navigate" do
       
       describe "delete" do
           it "can be deleted" do
-              @post = FactoryGirl.create(:post)
-              @post.update(user_id: @user.id)
+              
+              logout(:user)
+              
+              delete_user = FactoryGirl.create(:user)
+              login_as(delete_user, :scope => :user)
+              
+              post_to_delete = Post.create(date: Date.today, rationale: "whoa, nelly", user_id: delete_user.id)
+              
+              
+              #@post = FactoryGirl.create(:post)
+              #@post.update(user_id: user.id)
 
               visit posts_path
-              click_link("delete_post_#{@post.id}_from_index")
+              click_link("delete_post_#{post_to_delete.id}_from_index")
               expect(page.status_code).to eq(200)
               
           end
