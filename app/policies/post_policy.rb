@@ -10,9 +10,7 @@ class PostPolicy < ApplicationPolicy
     #return true if (record.user_id == user.id || admin_types.include?(user.type)) && !record.approved?
         
     end
-    
-    
-    
+ 
     
     private
     

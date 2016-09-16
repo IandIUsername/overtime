@@ -6,7 +6,11 @@ class PostsController < ApplicationController
         
     #@posts = current_user.posts
     
-      @posts = Post.posts_by current_user
+      #if current_user.type == 'admin'
+          #@posts = Post.all
+      #else
+         @posts = Post.posts_by current_user 
+      #end
     
     end
     
