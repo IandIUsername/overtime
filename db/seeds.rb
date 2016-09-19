@@ -6,11 +6,21 @@ User.delete_all
 
 puts "all users deleted"
 
-@user = User.create(email: "dogs@dogs.com", password: "password", password_confirmation: "password", first_name: "Doogie", last_name: "Howser")
+@user = User.create(email: "dogs@dogs.com", 
+password: "password", 
+password_confirmation: "password", 
+first_name: "Doogie", 
+last_name: "Howser", 
+phone: "555-1212")
 
 puts "1 user created"
 
-@adminuser = AdminUser.create(email: "admin@putzesrus.com", password: 'password', password_confirmation: 'password', first_name: 'AdminBill', last_name: 'AdminExcellent-adventure')
+@adminuser = AdminUser.create(email: "admin@putzesrus.com", 
+password: 'password', 
+password_confirmation: 'password', 
+first_name: 'AdminBill', 
+last_name: 'AdminExcellent-adventure', 
+phone: '444-3322')
 
 puts "1 adminuser created"
 
