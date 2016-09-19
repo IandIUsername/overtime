@@ -86,7 +86,7 @@ describe "navigate" do
    describe "creation" do
        before do
            user = User.create(email: "bird@test.com", password: 'password', password_confirmation: 'password', first_name: "Max", last_name: 
-           "Sloober", phone: "333-3333")
+           "Sloober", phone: "1234567890")
            login_as(user, :scope => :user)
            visit new_post_path
        end
@@ -120,7 +120,7 @@ describe "navigate" do
    describe "edit" do
        
        before do
-           @edit_user = User.create(first_name: "Bob", last_name: "Bobman", email: "bob@bobman.com", password: "password", password_confirmation: "password", phone: "6177365551212" )
+           @edit_user = User.create(first_name: "Bob", last_name: "Bobman", email: "bob@bobman.com", password: "password", password_confirmation: "password", phone: "1234567890" )
            
            login_as(@edit_user, :scope => :user)
            @edit_post = Post.create(date: Date.today, rationale: "stuff", user_id: @edit_user.id, overtime_request: 3.5)
