@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          
   validates_presence_of :first_name, :last_name, :phone
   has_many :posts
+  has_many :audit_logs
   
   
   PHONE_REGEX = /\A[0-9]*\Z/ 
