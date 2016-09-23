@@ -34,7 +34,7 @@ RSpec.describe AuditLog, type: :model do
       
       
       
-      xit "should be required to have a start date" do
+      it "should be required to have a start date" do
             @audit_log.start_date = nil
           expect(@audit_log).to_not be_valid
           
